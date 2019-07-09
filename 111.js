@@ -43,3 +43,30 @@ var minDepth = function(root) {
   
   return depth;
 };
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * 深度优先算法
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minDepth = function(root) {
+    if (root === null) {
+        return 0;
+    }
+    
+    let left = minDepth(root.left);
+    let right = minDepth(root.right);
+    
+    let result = (left === 0 || right === 0) ? 
+                    left + right + 1 : 
+                    1 + Math.min(left, right);
+    return result;
+};

@@ -39,3 +39,18 @@ var maxDepth = function(root) {
 
   return depth;
 };
+
+/**
+ * 深度优先 时间复杂度O(n)
+ * 
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    if (root === null) {
+        return 0;
+    }
+    
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+  };
+  
