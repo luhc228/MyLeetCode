@@ -3,7 +3,9 @@ function insertSort(arr) {
   let preIndex, current;
 
   for (let i = 1; i < len; i++) {
+    // 记录前一个数的下标
     preIndex = i - 1
+    // 记录当前的操作的目标数
     current = arr[i]
 
     while (preIndex >= 0 && arr[preIndex] > current) {
