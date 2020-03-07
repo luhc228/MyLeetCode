@@ -3,7 +3,7 @@
  * @param {number} N
  * @return {number}
  */
-var fib = function(N) {
+var fib = function (N) {
   if (N === 0 || N === 1) {
     return N;
   }
@@ -16,12 +16,9 @@ var fib = function(N) {
  * @param {number} N
  * @return {number}
  */
-let map = new Map([
-  [0, 0],
-  [1, 1]
-]);
+let map = new Map([[0, 0], [1, 1]]);
 
-var fib = function(N) {
+var fib = function (N) {
   if (map.has(N)) {
     return map.get(N);
   }
@@ -30,3 +27,5 @@ var fib = function(N) {
   map.set(N, result);
   return result;
 };
+
+
