@@ -10,17 +10,16 @@ function Factorial(n) {
 
 // 代码模板
 function recursion(level, param1, param2) {
-  // 先写上递归终止条件
+  // recursion terminal
   if (level > MAX_LEVEL) {
-    process_result;
-    return;
+    process_result
+    return
   }
 
-  // 完成逻辑代码 处理当前层逻辑
-  process(level, data);
+  // process logic in current level
+  process(level, data)
 
-  // 下到下一层
-  recursion(level + 1, p1);
-
-  // 清理当前层的状态
+  // drill down
+  process(level + 1, param1)
+  // reverse the current level status if needed
 }
