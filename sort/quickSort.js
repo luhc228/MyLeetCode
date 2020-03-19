@@ -1,29 +1,36 @@
-// 快排
-function quickSort(arr, left, right) {
-  const len = arr.length
-  let partitionIndex
-  let left = typeof left !== 'number' ? 0 : left;
-  let right = typeof right !== 'number' ? 0 : right;
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArray = function (nums) {
+  quickSort(nums)
+  return nums
+};
 
+function quickSort(arr, left, right) {
+  left = typeof left === 'number' ? left : 0;
+  right = typeof right === 'number' ? right : arr.length - 1;
   if (left < right) {
-    partitionIndex = partition(arr, left, right)
-    quickSort(arr, left, partitionIndex - 1)
-    quickSort(arr, partitionIndex + 1, right)
+    const pviot = partition(arr, left, right)
+    quickSort(arr, left, pviot - 1)
+    quickSort(arr, pviot + 1, right)
   }
 }
 
-function partition(arr, left, right) {
-  let pivot = right;
-  let counter = left;
-  for (let i = left; i < right; i++) {
-    if (a[i] < a[pivot]) {
-      // 交换
+function partition(arr, begin, end) {
+  let pviot = end
+  let counter = begin
+  for (let i = begin; i < end; i++) {
+    if (arr[i] < arr[pviot]) {
+      const temp = arr[counter]
+      arr[counter] = arr[i]
+      arr[i] = temp
       counter++
     }
   }
 
-  // 交换 pivot 和  counter的元素
-
-  return counter;
+  const temp = arr[pviot]
+  arr[pviot] = arr[counter]
+  arr[counter] = temp
+  return counter
 }
-
