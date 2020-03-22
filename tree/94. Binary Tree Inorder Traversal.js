@@ -59,3 +59,37 @@ var inorderTraversal = function (root) {
   return res
 
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * 颜色标记法
+ * ref: https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var inorderTraversal = function (root) {
+  const WHITE = 0
+  const GRAY = 1
+  let res = []
+  let stack = [[WHITE, root]]
+  while (stack.length) {
+    [color, node] = stack.pop()
+    if (node) {
+      if (color === WHITE) {
+        stack.push([WHITE, node.right])
+        stack.push([GRAY, node])
+        stack.push([WHITE, node.left])
+      } else {
+        res.push(node.val)
+      }
+    }
+  }
+
+  return res
+};
