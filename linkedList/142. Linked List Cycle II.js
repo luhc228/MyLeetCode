@@ -8,7 +8,7 @@
 
 /**
  * 方法1
- * 使用 Set
+ * 使用 Set记录已访问过的节点
  * @param {ListNode} head
  * @return {ListNode}
  */
@@ -33,6 +33,8 @@ var detectCycle = function (head) {
  */
 
 /**
+ * 方法二：快慢指针
+ * 
  * @param {ListNode} head
  * @return {ListNode}
  */
@@ -55,7 +57,6 @@ var detectCycle = function (head) {
     if (fast == slow) {
       break
     }
-
   }
 
   fast = head
