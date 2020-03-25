@@ -39,3 +39,38 @@ var largestValues = function (root) {
 
   return res
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var largestValues = function (root) {
+  if (!root) {
+    return []
+  }
+  let res = []
+  helper(1, res, root)
+  return res
+};
+
+function helper(level, res, node) {
+  if (res[level - 1] != null) {
+    res[level - 1] = Math.max(res[level - 1], node.val)
+  } else {
+    res[level - 1] = node.val
+  }
+  if (node.left) {
+    helper(level + 1, res, node.left)
+  }
+
+  if (node.right) {
+    helper(level + 1, res, node.right)
+  }
+}
