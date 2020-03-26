@@ -6,6 +6,7 @@
  * }
  */
 /**
+ * 方法一：广度优先
  * @param {TreeNode} root
  * @return {number[]}
  */
@@ -48,6 +49,7 @@ var largestValues = function (root) {
  * }
  */
 /**
+ * 方法二：深度优先
  * @param {TreeNode} root
  * @return {number[]}
  */
@@ -61,6 +63,10 @@ var largestValues = function (root) {
 };
 
 function helper(level, res, node) {
+  // 增加递归的终止条件
+  if (!node) {
+    return
+  }
   if (res[level - 1] != null) {
     res[level - 1] = Math.max(res[level - 1], node.val)
   } else {
