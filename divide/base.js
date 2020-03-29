@@ -12,7 +12,6 @@ function divideConquer(problem, param1, param2) {
   // conquer subproblems
   subresult1 = divideConquer(subproblems[0], p1)
   subresult2 = divideConquer(subproblems[1], p1)
-
   subresult3 = divideConquer(subproblems[2], p1)
 
   // process and generate the final result
