@@ -17,6 +17,10 @@
 
 ### Recursion 递归
 
+### Divide 分治
+
+### Backtracking 回溯
+
 ### Sort 排序
 
 ### Hash 哈希表和映射
