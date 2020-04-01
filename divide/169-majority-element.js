@@ -31,3 +31,34 @@ var majorityElement = function (nums) {
   }
   return candNum
 };
+
+// 类快排思想
+var majorityElement = function (nums) {
+  return quickSort(nums, 0, nums.length - 1, Math.floor(nums.length / 2))
+};
+
+function quickSort(nums, lo, hi, k) {
+  const pivot = partition(nums, lo, hi)
+  if (pivot == k) {
+    return nums[pivot];
+  }
+  return pivot > k ? quickSort(nums, lo, pivot - 1, k) : quickSort(nums, pivot + 1, hi, k)
+}
+
+function partition(nums, lo, hi) {
+  let pivot = hi
+  let counter = lo
+  for (let i = lo; i < hi; i++) {
+    if (nums[i] < nums[pivot]) {
+      const temp = nums[counter]
+      nums[counter] = nums[i]
+      nums[i] = temp
+      counter++
+    }
+  }
+  const temp = nums[counter]
+  nums[counter] = nums[pivot]
+  nums[pivot] = temp
+
+  return counter
+}
