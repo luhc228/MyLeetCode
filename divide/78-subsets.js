@@ -1,5 +1,5 @@
 /**
- * 方法一：递归
+ * 方法一：迭代
  * @param {number[]} nums
  * @return {number[][]}
  */
@@ -14,11 +14,7 @@ var subsets = function (nums) {
   return res
 };
 
-/**
- * 方法二：分治
- * @param {number[]} nums
- * @return {number[][]}
- */
+// 方法二：递归（回溯算法）
 var subsets = function (nums) {
   let res = []
   let len = nums.length
@@ -35,4 +31,3 @@ var subsets = function (nums) {
   backtrack([], 0, nums, res)
   return res
 };
-
