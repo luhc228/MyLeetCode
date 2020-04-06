@@ -30,7 +30,19 @@
 ### Greedy 贪心
 
 ### BinarySearch 二分查找
+- 33. search-in-rotated-sorted-array
+- 69. Sqrt(x)
+- 74.
+- 153.
+- 367. valid-perfect-square
+
+### Dymamic Programming 动态规划
+- 62. unique-paths
+- 63. unique-paths-ii
 
 ### Trie 字典树
+
+### 位运算
+- 191. number-of-1-bits
 
 ### Other 其他的题目，包括部分每日一题和数学的题目
